@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://baygkdli7usix"]
+[gd_scene load_steps=6 format=3 uid="uid://baygkdli7usix"]
 
 [ext_resource type="Texture2D" uid="uid://c6q0468aa5x3q" path="res://assets/images/doge.png" id="1_y1a0o"]
+[ext_resource type="PackedScene" uid="uid://cdmq0anny5tr4" path="res://assets/models/Mentos3D.fbx" id="2_iybhr"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mgdbp"]
 
@@ -41,3 +42,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_y1a0o")
 expand_mode = 2
+
+[node name="Mentos3D" parent="." instance=ExtResource("2_iybhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32311, 0)
