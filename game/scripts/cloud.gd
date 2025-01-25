@@ -1,6 +1,7 @@
 extends Sprite3D
 #todo c'est moche faut changer
 @onready var playerLogic : PlayerLogic = self.get_parent().get_parent().get_parent().get_child(0) as PlayerLogic
+
 var rng = RandomNumberGenerator.new()
 static var loaded_textures: Array[CompressedTexture2D]
 static func _static_init() -> void:
