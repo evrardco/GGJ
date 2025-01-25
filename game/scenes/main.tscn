@@ -21,9 +21,10 @@ ambient_light_energy = 15.95
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_t8a43"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_wnetk"]
-size = Vector3(5, 0.25, 0.25)
+size = Vector3(5, 0.25, 2)
 
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="PlayerLogic" type="Node" parent="."]
 unique_name_in_owner = true
@@ -49,6 +50,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
 layout_mode = 1
@@ -59,6 +61,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_y1a0o")
 expand_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="CloudsHandler" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.92039, 7.41133, 0.144325)
