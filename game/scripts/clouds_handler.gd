@@ -25,9 +25,8 @@ func _ready() -> void:
 func ggj_spawn_cloud():
 	
 	var spawnCloud_instance = spawnCloud.instantiate()
-	print("Nuage instancié : ", spawnCloud_instance)
 	var x = self.position.x + rng.randf() * max_abs_x_offset - 2 * rng.randf() * max_abs_x_offset
-	var y = self.position.y + rng.randf() * max_abs_y_offset - rng.randf() * max_abs_y_offset
+	var y = 10 + self.position.y + rng.randf() * max_abs_y_offset - rng.randf() * max_abs_y_offset
 	var z = self.position.z + rng.randf() * max_abs_z_offset - rng.randf() * max_abs_z_offset
 	spawnCloud_instance.position.x = x
 	spawnCloud_instance.position.y = y
