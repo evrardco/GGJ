@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://baygkdli7usix"]
+[gd_scene load_steps=18 format=3 uid="uid://baygkdli7usix"]
 
 [ext_resource type="Texture2D" uid="uid://c6q0468aa5x3q" path="res://assets/images/doge.png" id="1_y1a0o"]
 [ext_resource type="PackedScene" uid="uid://cdmq0anny5tr4" path="res://assets/models/Mentos3D.fbx" id="2_iybhr"]
@@ -31,9 +31,26 @@ roughness_texture = ExtResource("8_ucilp")
 normal_enabled = true
 normal_texture = ExtResource("7_wemh4")
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wlm23"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+inherit_velocity_ratio = 0.664
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5t17"]
+transparency = 1
+albedo_color = Color(0.994742, 0.563129, 0.390153, 0.101961)
+emission_enabled = true
+emission = Color(0.735431, 0.356537, 0.0544626, 1)
+emission_energy_multiplier = 0.28
+
+[sub_resource type="SphereMesh" id="SphereMesh_hg7nm"]
+material = SubResource("StandardMaterial3D_m5t17")
+height = 1.082
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Bottle" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.29128)
 mesh = SubResource("CylinderMesh_mgdbp")
 skeleton = NodePath("../..")
 
@@ -45,7 +62,7 @@ environment = SubResource("Environment_2wgqx")
 camera_attributes = SubResource("CameraAttributesPractical_t8a43")
 
 [node name="Mentos3D" parent="." instance=ExtResource("2_iybhr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32311, -0.0149088)
+transform = Transform3D(0.999489, 0, -0.0319515, 0, 1, 0, 0.0319515, 0, 0.999489, 0, 1.32311, 2.2761)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.965926, 1.13133e-08, -0.258819, 0.258819, -4.2222e-08, 0.965926, 0, -1, -4.37114e-08, 0, 5.59461, 0)
@@ -78,3 +95,9 @@ transform = Transform3D(3.6921, -3.28228, 0, 2.75211, 4.30207, -0.218569, 0.4222
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74468, 0, -2.53608)
 mesh = ExtResource("5_e8uau")
 surface_material_override/0 = SubResource("StandardMaterial3D_f302j")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.683269, 0, 0, 0, 0.683269, 0, 0, 0, 0.683269, 151.828, 0, 0)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_wlm23")
+draw_pass_1 = SubResource("SphereMesh_hg7nm")
