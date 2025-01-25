@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwd346y1ydud4"]
+[gd_scene load_steps=3 format=3 uid="uid://4sg7fbg6nr7e"]
 
 [ext_resource type="Texture2D" uid="uid://doiu20vja8o3s" path="res://assets/images/nuage03.png" id="1_5gbyi"]
 [ext_resource type="Script" path="res://game/scripts/cloud.gd" id="2_7wk7x"]
 
 [node name="Cloud" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
