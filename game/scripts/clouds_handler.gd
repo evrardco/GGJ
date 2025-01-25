@@ -1,7 +1,6 @@
-extends MeshInstance3D
+extends Node3D
 var spawnCloud = load("res://game/scenes/cloud.tscn")
 var time_counter: float = 0
-@onready var area : BoxMesh = self.mesh
 @export var spawn_period : float = 1
 
 # Limites de position pour les nuages
