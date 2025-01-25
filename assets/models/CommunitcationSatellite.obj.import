@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://70pde2n42vl6"
+path="res://.godot/imported/CommunitcationSatellite.obj-c504c3a3d63b4052f5b232899d4d0f33.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CommunitcationSatellite.obj-c504c3a3d63b4052f5b232899d4d0f33.mesh"]
+
+source_file="res://assets/models/CommunitcationSatellite.obj"
+dest_files=["res://.godot/imported/CommunitcationSatellite.obj-c504c3a3d63b4052f5b232899d4d0f33.mesh", "res://.godot/imported/CommunitcationSatellite.obj-c504c3a3d63b4052f5b232899d4d0f33.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
