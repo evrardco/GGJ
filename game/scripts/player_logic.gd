@@ -15,7 +15,7 @@ var rng = RandomNumberGenerator.new()
 @export var player_speed : float = 10
 var player_LandR_vitesse : float = 0
 @export var player_LandR_posision : float = 0
-
+var player_vy : float = min_vy
 var player_speed_max : float = 20
 var player_speed_min : float = -10
 var limite_left : float = -1.7
@@ -47,12 +47,13 @@ func consume_boost():
 	
 func _process(delta: float) -> void:
 	update_vy(delta)
+	
 	if Input.is_action_just_pressed("boost"):
 		consume_boost()
-	if Input.is_key_pressed(KEY_Q) and player_LandR_posision > limite_left:
+		
+	if Input.is_action_pressed("Left") and player_LandR_posision > limite_left:
 		player_LandR_vitesse -= 5.0 * delta
-	
-	elif Input.is_key_pressed(KEY_D) and  player_LandR_posision < limite_right:
+	elif Input.is_action_pressed("Right") and  player_LandR_posision < limite_right:
 		player_LandR_vitesse += 5.0 * delta
 	else:
 		player_LandR_vitesse = lerp(player_LandR_vitesse, 0.0, 5.0 * delta)
