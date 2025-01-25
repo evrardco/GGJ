@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://baygkdli7usix"]
+[gd_scene load_steps=12 format=3 uid="uid://baygkdli7usix"]
 
 [ext_resource type="PackedScene" uid="uid://dk8l6xvunrvkb" path="res://assets/models/bouteille3D.fbx" id="1_d30t6"]
 [ext_resource type="Texture2D" uid="uid://c6q0468aa5x3q" path="res://assets/images/doge.png" id="1_y1a0o"]
 [ext_resource type="Script" path="res://game/scripts/clouds_handler.gd" id="3_h3bav"]
 [ext_resource type="PackedScene" uid="uid://dwd346y1ydud4" path="res://game/scenes/cloud.tscn" id="4_ien7t"]
 [ext_resource type="Script" path="res://game/scripts/player_logic.gd" id="5_et4w0"]
+[ext_resource type="Texture2D" uid="uid://djgrcj4o02wxk" path="res://assets/images/Fond du ciel.png" id="6_co7vr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j8fnu"]
 
@@ -70,3 +71,11 @@ script = ExtResource("3_h3bav")
 
 [node name="Cloud" parent="." instance=ExtResource("4_ien7t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, 0)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -75.0
+offset_top = -1.52588e-05
+offset_right = 1925.0
+offset_bottom = 2000.0
+scale = Vector2(0.717884, 0.436113)
+texture = ExtResource("6_co7vr")
