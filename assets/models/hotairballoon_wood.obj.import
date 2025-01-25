@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://xxj14o8l2wvr"
+path="res://.godot/imported/hotairballoon_wood.obj-662418ea6a168d76c83c7640b6fd5bec.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hotairballoon_wood.obj-662418ea6a168d76c83c7640b6fd5bec.mesh"]
+
+source_file="res://assets/models/hotairballoon_wood.obj"
+dest_files=["res://.godot/imported/hotairballoon_wood.obj-662418ea6a168d76c83c7640b6fd5bec.mesh", "res://.godot/imported/hotairballoon_wood.obj-662418ea6a168d76c83c7640b6fd5bec.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

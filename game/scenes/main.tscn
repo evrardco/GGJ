@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://baygkdli7usix"]
+[gd_scene load_steps=21 format=3 uid="uid://baygkdli7usix"]
 
 [ext_resource type="Texture2D" uid="uid://c6q0468aa5x3q" path="res://assets/images/doge.png" id="1_y1a0o"]
 [ext_resource type="PackedScene" uid="uid://cdmq0anny5tr4" path="res://assets/models/Mentos3D.fbx" id="2_iybhr"]
@@ -8,6 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://brswtktuv5u16" path="res://assets/models/flying_saucer_2_baseColor.png" id="6_7qvf3"]
 [ext_resource type="Texture2D" uid="uid://cqip0omeddxi" path="res://assets/models/flying_saucer_2_normal.png" id="7_wemh4"]
 [ext_resource type="Texture2D" uid="uid://dupf6drx4sldf" path="res://assets/models/flying_saucer_2_roughness.png" id="8_ucilp"]
+[ext_resource type="ArrayMesh" uid="uid://xxj14o8l2wvr" path="res://assets/models/hotairballoon_wood.obj" id="9_u0xfa"]
+[ext_resource type="Texture2D" uid="uid://c6176c600d4j2" path="res://assets/models/hotairballoon_wood_Mat_baseColor.png" id="10_na4pi"]
+[ext_resource type="Texture2D" uid="uid://bml0u8dkqut0e" path="res://assets/models/hotairballoon_wood_Mat_metallic.png" id="11_igaeu"]
+[ext_resource type="Texture2D" uid="uid://2gjj1mjk2gp6" path="res://assets/models/hotairballoon_wood_Mat_normal.png" id="12_c3k1c"]
+[ext_resource type="Texture2D" uid="uid://dmndbwx5fsk1w" path="res://assets/models/hotairballoon_wood_Mat_roughness.png" id="13_m36pi"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mgdbp"]
 
@@ -30,6 +35,14 @@ albedo_texture = ExtResource("6_7qvf3")
 roughness_texture = ExtResource("8_ucilp")
 normal_enabled = true
 normal_texture = ExtResource("7_wemh4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gujus"]
+albedo_texture = ExtResource("10_na4pi")
+metallic = 1.0
+metallic_texture = ExtResource("11_igaeu")
+roughness_texture = ExtResource("13_m36pi")
+normal_enabled = true
+normal_texture = ExtResource("12_c3k1c")
 
 [node name="Node3D" type="Node3D"]
 
@@ -78,3 +91,8 @@ transform = Transform3D(3.6921, -3.28228, 0, 2.75211, 4.30207, -0.218569, 0.4222
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74468, 0, -2.53608)
 mesh = ExtResource("5_e8uau")
 surface_material_override/0 = SubResource("StandardMaterial3D_f302j")
+
+[node name="HotairballoonWood" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0032, 10.0556, -10.0968)
+mesh = ExtResource("9_u0xfa")
+surface_material_override/0 = SubResource("StandardMaterial3D_gujus")
