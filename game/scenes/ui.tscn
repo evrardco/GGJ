@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2ymhdxfwy1c5"]
+
+[ext_resource type="Texture2D" uid="uid://b8w7t3qd56re0" path="res://assets/images/mentos.png" id="1_onjck"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_73orl"]
+font_size = 55
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -224.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 120.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = -104.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_onjck")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Control" type="Control" parent="Panel"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+label_settings = SubResource("LabelSettings_73orl")
+horizontal_alignment = 1
+vertical_alignment = 1

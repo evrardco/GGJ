@@ -16,7 +16,6 @@ func _ready() -> void:
 	self.texture = loaded_textures[tex_idx]
 	self.flip_h = rng.randi() % 2 == 0
 	
-	
 # Appelé à chaque frame. 'delta' est le temps écoulé depuis la frame précédente.
 func _process(delta: float) -> void:
 	self.position.y -= playerLogic.player_speed * delta
