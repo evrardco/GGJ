@@ -12,5 +12,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if playerLogic != null:
 		self.position.y -= playerLogic.player_speed * delta
-	else:
-		print("Erreur : playerLogic n'est pas initialisé")
+	#else:
+		#print("Erreur : playerLogic n'est pas initialisé")
