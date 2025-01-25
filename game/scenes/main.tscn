@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://baygkdli7usix"]
+[gd_scene load_steps=11 format=3 uid="uid://baygkdli7usix"]
 
 [ext_resource type="PackedScene" uid="uid://dk8l6xvunrvkb" path="res://assets/models/bouteille3D.fbx" id="1_d30t6"]
 [ext_resource type="Texture2D" uid="uid://c6q0468aa5x3q" path="res://assets/images/doge.png" id="1_y1a0o"]
 [ext_resource type="Script" path="res://game/scripts/clouds_handler.gd" id="3_h3bav"]
+[ext_resource type="PackedScene" uid="uid://dwd346y1ydud4" path="res://game/scenes/cloud.tscn" id="4_ien7t"]
+[ext_resource type="Script" path="res://game/scripts/player_logic.gd" id="5_et4w0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j8fnu"]
 
@@ -22,6 +24,10 @@ ambient_light_energy = 15.95
 size = Vector3(5, 0.25, 0.25)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="PlayerLogic" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_et4w0")
 
 [node name="bouteille3D" parent="." instance=ExtResource("1_d30t6")]
 transform = Transform3D(2.5, 0, 0, 0, -2.5, 2.18557e-07, 0, -2.18557e-07, -2.5, -1, 2, 0)
@@ -58,3 +64,6 @@ expand_mode = 2
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.92039, 7.41133, 0.144325)
 mesh = SubResource("BoxMesh_wnetk")
 script = ExtResource("3_h3bav")
+
+[node name="Cloud" parent="." instance=ExtResource("4_ien7t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, 0)
