@@ -1,12 +1,13 @@
 extends Node
 class_name PlayerLogic
+var rng = RandomNumberGenerator.new()
 
 @export var player_speed : float = 10
-# Called when the node enters the scene tree for the first time.
+
+# Appelé lorsque le nœud entre dans l'arbre de la scène pour la première fois.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Appelé à chaque frame. 'delta' est le temps écoulé depuis la frame précédente.
 func _process(delta: float) -> void:
 	pass
