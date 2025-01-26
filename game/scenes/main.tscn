@@ -33,7 +33,7 @@ fog_height_density = 2.5263
 dof_blur_far_distance = 18.72
 dof_blur_far_transition = 382.31
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 
 [node name="PlayerLogic" type="Node" parent="."]
 unique_name_in_owner = true

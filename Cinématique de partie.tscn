@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca2bmtawa1uck"]
+[gd_scene load_steps=3 format=3 uid="uid://elhvj7obrkr2"]
 
 [ext_resource type="VideoStream" path="res://assets/Videos and photos/Cinématique-de-partie-2.ogv" id="1_il1wr"]
 [ext_resource type="Script" path="res://Cinématique partie.gd" id="1_p5x6n"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 offset_right = 40.0
