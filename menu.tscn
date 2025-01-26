@@ -44,7 +44,7 @@ offset_left = -79.0
 offset_top = -84.0
 offset_right = 1841.0
 offset_bottom = 996.0
-scale = Vector2(0.395258, 0.510683)
+scale = Vector2(0.396041, 0.46127)
 texture = ExtResource("4_efqkw")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
