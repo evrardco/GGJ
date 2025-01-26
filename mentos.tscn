@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvxlk8if67x2s"]
-
-[ext_resource type="PackedScene" uid="uid://cdmq0anny5tr4" path="res://assets/models/Mentos3D.fbx" id="1_l3wf4"]
-
-[node name="mentos" type="Node3D"]
-
-[node name="Sprite3d" parent="." instance=ExtResource("1_l3wf4")]
-transform = Transform3D(1, 0, 0, 0, -0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0)
