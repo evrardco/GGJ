@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm7c6doi8hoax"]
+
+[ext_resource type="PackedScene" uid="uid://baqiam4eq4yyl" path="res://assets/models/asteroid01.fbx" id="1_e1w0g"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sytrb"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="asteroid01" parent="." instance=ExtResource("1_e1w0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00187564, 0, -0.679035)
+
+[node name="Area3D" type="Area3D" parent="asteroid01"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="asteroid01/Area3D"]
+transform = Transform3D(4.79472, 0, 0, 0, 6.22985, 0, 0, 0, 5.26767, 0.361669, 0.431087, 0.358805)
+shape = SubResource("SphereShape3D_sytrb")
