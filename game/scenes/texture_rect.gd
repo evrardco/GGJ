@@ -14,7 +14,7 @@ func _ready():
 	update_texture()
 
 func update_texture():
-	if playerLogic.altitude < 200:
+	if playerLogic.altitude < 3000:
 		texture = textures[0]  # Image pour basse altitude
 	else:
 		texture = textures[1]  # Image pour altitude moyenne
