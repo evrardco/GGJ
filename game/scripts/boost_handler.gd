@@ -23,23 +23,24 @@ var rng = RandomNumberGenerator.new()
 
 # Appelé lorsque le nœud entre dans l'arbre de la scène pour la première fois.
 func _ready() -> void:
-	ggj_spawn_cloud()
+	ggj_spawn_mentos()
 
-# Fonction pour générer des nuages de manière aléatoire
-func ggj_spawn_cloud():
-	var spawnCloud_instance = spawnCloud.instantiate()
-	var x = self.position.x + rng.randf() * max_abs_x_offset - 2 * rng.randf() * max_abs_x_offset
-	var y = 10 + self.position.y + rng.randf() * max_abs_y_offset - rng.randf() * max_abs_y_offset
+
+
+# Fonction pour générer des mentos de manière aléatoire
+func ggj_spawn_mentos():
+	var spawnMentos_instance = spawnMentos.instantiate()
+	var x = playerLogic.bottle.position.x - 0.1
+	var y =  3 + self.position.y 
 	var z = self.position.z + rng.randf() * max_abs_z_offset - rng.randf() * max_abs_z_offset
-	spawnCloud_instance.position = Vector3(x, y, z)
-	add_child(spawnCloud_instance)
-
+	spawnMentos_instance.position = Vector3(x, y, z)
+	add_child(spawnMentos_instance)
 
 # Appelé à chaque frame. 'delta' est le temps écoulé depuis la frame précédente.
 func _process(delta: float) -> void:
 	time_counter += delta
 	if time_counter >= spawn_period:
-		ggj_spawn_cloud()
+		ggj_spawn_mentos()
 		time_counter = 0
-	spawn_period = max_spawn_period / playerLogic.player_vy
+	spawn_period = max_spawn_period
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://vuh6usyevajg"]
+[gd_scene load_steps=3 format=3 uid="uid://ba8prprfnlijd"]
 
 [ext_resource type="VideoStream" path="res://assets/Videos and photos/Cinématique-jeu-6.ogv" id="1_1hu0f"]
 [ext_resource type="Script" path="res://video_stream_player.gd" id="2_tba5a"]
