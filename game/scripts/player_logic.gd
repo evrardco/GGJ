@@ -63,9 +63,6 @@ func consume_boost():
 func add_boost():
 	n_boosts += 1
 	ui_refresh.emit()
-func _process(delta: float) -> void:
-	update_vy(delta)
-	
 	
 func handle_kb(delta: float):
 	if Input.is_action_just_pressed("boost"):
