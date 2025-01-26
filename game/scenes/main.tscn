@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://baygkdli7usix"]
+[gd_scene load_steps=11 format=3 uid="uid://baygkdli7usix"]
 
 [ext_resource type="PackedScene" uid="uid://dk8l6xvunrvkb" path="res://assets/models/bouteille3D.fbx" id="3_1sl8j"]
 [ext_resource type="Script" path="res://game/scripts/clouds_handler.gd" id="3_h3bav"]
@@ -6,18 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c2ymhdxfwy1c5" path="res://game/scenes/ui.tscn" id="4_3abob"]
 [ext_resource type="Script" path="res://game/scripts/player_logic.gd" id="5_et4w0"]
 [ext_resource type="Script" path="res://game/scenes/ui.gd" id="6_1tu3o"]
-[ext_resource type="PackedScene" uid="uid://baqiam4eq4yyl" path="res://assets/models/asteroid01.fbx" id="4_eykeh"]
-[ext_resource type="ArrayMesh" uid="uid://6aqyo2vykoky" path="res://assets/models/flying_saucer_2.obj" id="5_e8uau"]
-[ext_resource type="Texture2D" uid="uid://brswtktuv5u16" path="res://assets/models/flying_saucer_2_baseColor.png" id="6_7qvf3"]
-[ext_resource type="Texture2D" uid="uid://cqip0omeddxi" path="res://assets/models/flying_saucer_2_normal.png" id="7_wemh4"]
-[ext_resource type="Texture2D" uid="uid://dupf6drx4sldf" path="res://assets/models/flying_saucer_2_roughness.png" id="8_ucilp"]
-[ext_resource type="ArrayMesh" uid="uid://xxj14o8l2wvr" path="res://assets/models/hotairballoon_wood.obj" id="9_u0xfa"]
-[ext_resource type="Texture2D" uid="uid://c6176c600d4j2" path="res://assets/models/hotairballoon_wood_Mat_baseColor.png" id="10_na4pi"]
-[ext_resource type="Texture2D" uid="uid://bml0u8dkqut0e" path="res://assets/models/hotairballoon_wood_Mat_metallic.png" id="11_igaeu"]
-[ext_resource type="Texture2D" uid="uid://2gjj1mjk2gp6" path="res://assets/models/hotairballoon_wood_Mat_normal.png" id="12_c3k1c"]
-[ext_resource type="Texture2D" uid="uid://dmndbwx5fsk1w" path="res://assets/models/hotairballoon_wood_Mat_roughness.png" id="13_m36pi"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_mgdbp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j8fnu"]
 
@@ -39,14 +27,6 @@ fog_height_density = 2.5263
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_t8a43"]
 dof_blur_far_distance = 18.72
 dof_blur_far_transition = 382.31
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gujus"]
-albedo_texture = ExtResource("10_na4pi")
-metallic = 1.0
-metallic_texture = ExtResource("11_igaeu")
-roughness_texture = ExtResource("13_m36pi")
-normal_enabled = true
-normal_texture = ExtResource("12_c3k1c")
 
 [node name="Node3D" type="Node3D"]
 
@@ -97,15 +77,5 @@ spawn_period = 0.05
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("4_3abob")]
 script = ExtResource("6_1tu3o")
-
-[node name="FlyingSaucer2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74468, 0, -2.53608)
-mesh = ExtResource("5_e8uau")
-surface_material_override/0 = SubResource("StandardMaterial3D_f302j")
-
-[node name="HotairballoonWood" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0032, 10.0556, -10.0968)
-mesh = ExtResource("9_u0xfa")
-surface_material_override/0 = SubResource("StandardMaterial3D_gujus")
 
 [connection signal="ui_refresh" from="PlayerLogic" to="CanvasLayer/UI" method="_on_player_logic_ui_refresh"]
