@@ -17,18 +17,18 @@ emission_energy_multiplier = 0.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_2bu42"]
 material = SubResource("StandardMaterial3D_2stgw")
-radius = 0.01
-height = 0.02
+radius = 0.02
+height = 0.04
 
 [node name="Node3D" instance=ExtResource("1_6lkgp")]
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="9"]
-transform = Transform3D(0.127296, 0, 0, 0, 0.127296, 0, 0, 0, 0.127296, -2.02534, 1.12194, 0)
-amount = 200
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Bottle" index="2"]
+transform = Transform3D(0.127296, 0, 0, 0, -0.127296, -1.11286e-08, 0, 1.11286e-08, -0.127296, 0.0349329, 0.606677, -5.30374e-08)
+amount = 300
 process_material = SubResource("ParticleProcessMaterial_b0nmp")
 draw_pass_1 = SubResource("SphereMesh_2bu42")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="GPUParticles3D" index="0"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Bottle/GPUParticles3D" index="0"]
 stream = ExtResource("2_um16i")
 volume_db = -23.333
 autoplay = true
