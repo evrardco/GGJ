@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnoleqmh70eyx"]
+[gd_scene load_steps=6 format=3 uid="uid://c0tiwvea16nx7"]
 
 [ext_resource type="PackedScene" uid="uid://baygkdli7usix" path="res://game/scenes/main.tscn" id="1_6lkgp"]
 [ext_resource type="AudioStream" uid="uid://djinosbs001et" path="res://assets/Videos and photos/Bulles son-1.mp3" id="2_um16i"]
@@ -8,7 +8,7 @@ lifetime_randomness = 0.13
 emission_shape = 2
 emission_sphere_radius = 0.4
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2stgw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3qcv"]
 transparency = 1
 albedo_color = Color(1, 0.615686, 0.470588, 0.462745)
 emission_enabled = true
@@ -16,7 +16,7 @@ emission = Color(0.751961, 0.351566, 0.04266, 1)
 emission_energy_multiplier = 0.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_2bu42"]
-material = SubResource("StandardMaterial3D_2stgw")
+material = SubResource("StandardMaterial3D_p3qcv")
 radius = 0.01
 height = 0.02
 
