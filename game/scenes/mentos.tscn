@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvxlk8if67x2s"]
+
+[ext_resource type="PackedScene" uid="uid://cdmq0anny5tr4" path="res://assets/models/Mentos3D.fbx" id="1_qapq6"]
+[ext_resource type="Script" path="res://assets/models/mentos_3d.gd" id="3_7y6dh"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Mentos3D" parent="." instance=ExtResource("1_qapq6")]
+script = ExtResource("3_7y6dh")
