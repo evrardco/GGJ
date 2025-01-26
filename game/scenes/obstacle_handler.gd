@@ -14,7 +14,12 @@ static func _static_init() -> void:
 	obstacles.append(load("res://game/scenes/hothairballooncollision.tscn"))
 func spawn_obstacle():
 	var n_elems = obstacles.size()
-	var scene = obstacles[rng.randi() % n_elems]
+	var scene_idx = 0
+	if rng.randf_range(0.0, 1.0) < 0.2:
+		scene_idx = 1
+	else: 
+		scene_idx = 0
+	var scene = obstacles[scene_idx]
 	var instance : Obstacle = scene.instantiate()
 	instance.playerLogic = playerLogic
 	self.add_child(instance)
