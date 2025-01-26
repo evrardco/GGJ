@@ -88,4 +88,10 @@ spawn_period = 0.05
 [node name="UI" parent="CanvasLayer" instance=ExtResource("4_3abob")]
 script = ExtResource("6_1tu3o")
 
+[node name="RefreshAltimetre" type="Timer" parent="CanvasLayer/UI"]
+wait_time = 0.25
+autostart = true
+
+[connection signal="ui_game_over" from="PlayerLogic" to="CanvasLayer/UI" method="_on_player_logic_ui_game_over"]
 [connection signal="ui_refresh" from="PlayerLogic" to="CanvasLayer/UI" method="_on_player_logic_ui_refresh"]
+[connection signal="timeout" from="CanvasLayer/UI/RefreshAltimetre" to="CanvasLayer/UI" method="_on_refresh_altimetre_timeout"]
