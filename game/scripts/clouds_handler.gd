@@ -1,5 +1,6 @@
 extends MeshInstance3D
 var spawnCloud = load("res://game/scenes/cloud.tscn")
+var spawnMentos = load("")
 var time_counter: float = 0
 @onready var area : BoxMesh = self.mesh
 @export var spawn_period : float = 1
