@@ -1,5 +1,6 @@
 extends Node3D
 var spawnCloud = load("res://game/scenes/cloud.tscn")
+var spawnMentos = load("")
 var time_counter: float = 0
 @export var max_spawn_period : float = 1
 @export var spawn_period : float = max_spawn_period
