@@ -12,7 +12,7 @@ offset_left = -3.0
 offset_top = -4.0
 offset_right = 2556.0
 offset_bottom = 1435.0
-scale = Vector2(0.449645, 0.472661)
+scale = Vector2(0.450914, 0.452548)
 texture = ExtResource("2_udc7w")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
