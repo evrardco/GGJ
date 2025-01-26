@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4pvvl3sx4ci"]
+[gd_scene load_steps=3 format=3 uid="uid://blc347um41ea"]
 
 [ext_resource type="PackedScene" uid="uid://baqiam4eq4yyl" path="res://assets/models/asteroid01.fbx" id="1_kf7h8"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_aadao"]
 radius = 3.0
 
-[node name="Node3D2" type="Node3D"]
+[node name="Node3D3" type="Node3D"]
 
 [node name="asteroid01" parent="." instance=ExtResource("1_kf7h8")]
 

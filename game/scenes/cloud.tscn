@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwd346y1ydud4"]
+[gd_scene load_steps=3 format=3 uid="uid://4sg7fbg6nr7e"]
 
 [ext_resource type="Texture2D" uid="uid://doiu20vja8o3s" path="res://assets/images/nuage03.png" id="1_5gbyi"]
 [ext_resource type="Script" path="res://game/scripts/cloud.gd" id="2_7wk7x"]
