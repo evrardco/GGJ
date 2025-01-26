@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://vuh6usyevajg"]
+[gd_scene load_steps=3 format=3 uid="uid://vuh6usyevajg"]
 
 [ext_resource type="VideoStream" path="res://assets/Videos and photos/Cinématique-jeu-5.ogv" id="1_3sbjr"]
+[ext_resource type="Script" path="res://video_stream_player.gd" id="2_tba5a"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,3 +11,6 @@ offset_bottom = 40.0
 scale = Vector2(0.603669, 0.602756)
 stream = ExtResource("1_3sbjr")
 autoplay = true
+script = ExtResource("2_tba5a")
+
+[connection signal="finished" from="VideoStreamPlayer" to="VideoStreamPlayer" method="_on_finished"]
