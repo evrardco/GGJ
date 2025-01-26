@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://pyl6pw1fo0uc"]
+[gd_scene load_steps=9 format=3 uid="uid://cky412gc27qyw"]
 
 [ext_resource type="ArrayMesh" uid="uid://6aqyo2vykoky" path="res://assets/models/flying_saucer_2.obj" id="1_ywgqf"]
 [ext_resource type="Texture2D" uid="uid://brswtktuv5u16" path="res://assets/models/flying_saucer_2_baseColor.png" id="2_v10dq"]

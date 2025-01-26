@@ -1,14 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://baygkdli7usix"]
+[gd_scene load_steps=18 format=3 uid="uid://baygkdli7usix"]
 
 [ext_resource type="PackedScene" uid="uid://dk8l6xvunrvkb" path="res://assets/models/bouteille3D.fbx" id="3_1sl8j"]
 [ext_resource type="Script" path="res://game/scripts/clouds_handler.gd" id="3_h3bav"]
 [ext_resource type="Texture2D" uid="uid://cn102kf17lepq" path="res://Fond du ciel.png" id="3_slfb0"]
 [ext_resource type="PackedScene" uid="uid://c2ymhdxfwy1c5" path="res://game/scenes/ui.tscn" id="4_3abob"]
 [ext_resource type="AudioStream" uid="uid://djinosbs001et" path="res://assets/Videos and photos/Bulles son-1.mp3" id="4_70jvf"]
-[ext_resource type="PackedScene" path="res://game/scenes/ui.tscn" id="4_3abob"]
 [ext_resource type="Script" path="res://game/scripts/player_logic.gd" id="5_et4w0"]
 [ext_resource type="Script" path="res://game/scripts/boost_handler.gd" id="5_pafuj"]
 [ext_resource type="Script" path="res://game/scenes/ui.gd" id="6_1tu3o"]
+[ext_resource type="Script" path="res://game/scenes/obstacle_handler.gd" id="6_5hgqf"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ubbq4"]
 height = 0.586003
@@ -117,6 +117,15 @@ script = ExtResource("3_h3bav")
 spawn_period = 0.05
 
 [node name="ObstacleHandler" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.96342, 1, 0)
+script = ExtResource("6_5hgqf")
+
+[node name="Marker3D" type="Marker3D" parent="ObstacleHandler"]
+gizmo_extents = 1.0
+
+[node name="Timer" type="Timer" parent="ObstacleHandler"]
+wait_time = 0.235
+autostart = true
 
 [node name="BoostHandler" type="Node3D" parent="."]
 script = ExtResource("5_pafuj")
@@ -132,4 +141,6 @@ autostart = true
 
 [connection signal="ui_game_over" from="PlayerLogic" to="CanvasLayer/UI" method="_on_player_logic_ui_game_over"]
 [connection signal="ui_refresh" from="PlayerLogic" to="CanvasLayer/UI" method="_on_player_logic_ui_refresh"]
+[connection signal="area_entered" from="Bottle/BottleHitBox" to="PlayerLogic" method="_on_bottle_hit_box_area_entered"]
+[connection signal="timeout" from="ObstacleHandler/Timer" to="ObstacleHandler" method="_on_timer_timeout"]
 [connection signal="timeout" from="CanvasLayer/UI/RefreshAltimetre" to="CanvasLayer/UI" method="_on_refresh_altimetre_timeout"]
