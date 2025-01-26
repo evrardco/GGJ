@@ -1,16 +1,20 @@
 extends Node
 class_name PlayerLogic
 signal ui_refresh
+signal ui_game_over
 @export var n_boosts : int = 3
 @export var boost_accel_y : float = 10  
 @export var accel_y : float = 0
 @export var accel_y_decr : float = 2.0  
 @export var gravity : float = 0.25
 @export var boost_duration : float = 2.0
-@export var boost_left : float = boost_duration
+@export var boost_left : float = 0.5#boost_duration
 @export var min_vy : float = -50
 @export var max_vy : float = 30
 @export var altitude : float = 100
+@export var bottle_speed : float = 0
+var game_over_timer : float = 0
+@export var game_over_max_time : float = 2.0
 var rng = RandomNumberGenerator.new()
 
 @export var player_speed : float = 10
@@ -26,14 +30,23 @@ var limite_right : float = 1.7
 func _ready() -> void:
 	pass
 	
+func game_over() -> void:
+	self.bottle_speed = player_vy
+	self.player_vy = 0
+	self.accel_y = 0
+	self.gravity = 0
+	self.boost_left = 0
+	self.n_boosts = 0
+	self.accel_y_decr = 0
+	ui_game_over.emit()
+	
 func update_vy(delta : float):
 	
-	if boost_left >= 0:
+	if boost_left > 0:
 		accel_y = boost_accel_y
 		boost_left -= delta
 	else:
 		accel_y -= accel_y_decr * delta
-		
 	player_vy += delta * (accel_y - gravity)
 	if player_vy < min_vy:
 		player_vy = min_vy
@@ -65,8 +78,18 @@ func handle_kb(delta: float):
 	# Rotation de la bouteille en fonction de la vitesse latérale
 	var rotation_angle = player_LandR_vitesse * 10.0  # Ajustez ce facteur pour une rotation plus prononcée
 	bottle.rotation_degrees.x = lerp(bottle.rotation_degrees.x, rotation_angle, 5.0 * delta)
-	
+
+func check_game_over(delta: float):
+	if player_vy <= min_vy:
+		game_over_timer += delta
+		if game_over_timer >= game_over_max_time:
+			game_over()
+	else:
+		game_over_timer = 0
+		
 func _process(delta: float) -> void:
 	update_vy(delta)
 	handle_kb(delta)
 	self.altitude += delta * player_vy
+	self.bottle.position.y += delta * bottle_speed
+	check_game_over(delta)

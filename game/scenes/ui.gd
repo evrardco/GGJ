@@ -19,3 +19,9 @@ func _on_player_logic_ui_refresh() -> void:
 
 func _on_refresh_altimetre_timeout() -> void:
 	altimetre_txt.text = str(int(player_logic.altitude))
+
+
+func _on_player_logic_ui_game_over() -> void:
+	(%"HUD" as Control).visible = false
+	(%"Score" as Label).text = str(int(player_logic.altitude))
+	(%"GameOverOverlay" as Control).visible = true
