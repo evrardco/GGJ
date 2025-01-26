@@ -124,7 +124,7 @@ script = ExtResource("6_5hgqf")
 gizmo_extents = 1.0
 
 [node name="Timer" type="Timer" parent="ObstacleHandler"]
-wait_time = 0.235
+wait_time = 2.0
 autostart = true
 
 [node name="BoostHandler" type="Node3D" parent="."]
