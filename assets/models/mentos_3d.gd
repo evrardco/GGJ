@@ -9,7 +9,7 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	self.position.y -= playerLogic.player_speed * delta
+	self.position.y -= playerLogic.player_vy * 0.01 * delta
 	life_time -= delta
 	if life_time <= 0:
 		self.queue_free()
@@ -17,4 +17,5 @@ func _process(delta: float) -> void:
 
 func _on_boost_hit_box_area_entered(area: Area3D) -> void:
 	if area.name == "BottleHitBox":
-		pass
+		playerLogic.add_boost()
+		queue_free()
