@@ -1,0 +1,27 @@
+[gd_scene load_steps=8 format=3 uid="uid://0g61076m6q72"]
+
+[ext_resource type="PackedScene" uid="uid://cdmq0anny5tr4" path="res://assets/models/Mentos3D.fbx" id="1_nngrl"]
+[ext_resource type="PackedScene" uid="uid://baqiam4eq4yyl" path="res://assets/models/asteroid01.fbx" id="2_3x8ub"]
+[ext_resource type="ArrayMesh" uid="uid://6aqyo2vykoky" path="res://assets/models/flying_saucer_2.obj" id="3_oqf51"]
+[ext_resource type="Texture2D" uid="uid://brswtktuv5u16" path="res://assets/models/flying_saucer_2_baseColor.png" id="4_yrno1"]
+[ext_resource type="Texture2D" uid="uid://cqip0omeddxi" path="res://assets/models/flying_saucer_2_normal.png" id="5_qy0qe"]
+[ext_resource type="Texture2D" uid="uid://dupf6drx4sldf" path="res://assets/models/flying_saucer_2_roughness.png" id="6_lw46s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ai3xs"]
+albedo_texture = ExtResource("4_yrno1")
+roughness_texture = ExtResource("6_lw46s")
+normal_enabled = true
+normal_texture = ExtResource("5_qy0qe")
+
+[node name="Gallerie" type="Node3D"]
+
+[node name="Mentos3D" parent="." instance=ExtResource("1_nngrl")]
+transform = Transform3D(0.00339326, -0.00301054, -3.20179e-11, 0.00252936, 0.0039459, -0.000197155, 0.000388085, 0.000605429, 0.00128496, 5.82284, 6.00522, 9.82855)
+
+[node name="asteroid01" parent="." instance=ExtResource("2_3x8ub")]
+transform = Transform3D(0.00339326, -0.00301054, -3.20179e-11, 0.00252936, 0.0039459, -0.000197155, 0.000388085, 0.000605429, 0.00128496, 5.82682, 6, 9.82777)
+
+[node name="FlyingSaucer2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 5.74468, 6, 9.46392)
+mesh = ExtResource("3_oqf51")
+surface_material_override/0 = SubResource("StandardMaterial3D_ai3xs")

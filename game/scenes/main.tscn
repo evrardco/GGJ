@@ -1,8 +1,11 @@
 [gd_scene load_steps=21 format=3 uid="uid://baygkdli7usix"]
 
-[ext_resource type="Texture2D" uid="uid://c6q0468aa5x3q" path="res://assets/images/doge.png" id="1_y1a0o"]
-[ext_resource type="PackedScene" uid="uid://cdmq0anny5tr4" path="res://assets/models/Mentos3D.fbx" id="2_iybhr"]
 [ext_resource type="PackedScene" uid="uid://dk8l6xvunrvkb" path="res://assets/models/bouteille3D.fbx" id="3_1sl8j"]
+[ext_resource type="Script" path="res://game/scripts/clouds_handler.gd" id="3_h3bav"]
+[ext_resource type="Texture2D" uid="uid://cn102kf17lepq" path="res://Fond du ciel.png" id="3_slfb0"]
+[ext_resource type="PackedScene" uid="uid://c2ymhdxfwy1c5" path="res://game/scenes/ui.tscn" id="4_3abob"]
+[ext_resource type="Script" path="res://game/scripts/player_logic.gd" id="5_et4w0"]
+[ext_resource type="Script" path="res://game/scenes/ui.gd" id="6_1tu3o"]
 [ext_resource type="PackedScene" uid="uid://baqiam4eq4yyl" path="res://assets/models/asteroid01.fbx" id="4_eykeh"]
 [ext_resource type="ArrayMesh" uid="uid://6aqyo2vykoky" path="res://assets/models/flying_saucer_2.obj" id="5_e8uau"]
 [ext_resource type="Texture2D" uid="uid://brswtktuv5u16" path="res://assets/models/flying_saucer_2_baseColor.png" id="6_7qvf3"]
@@ -27,14 +30,15 @@ sky = SubResource("Sky_ckkit")
 ambient_light_source = 1
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 15.95
+glow_enabled = true
+fog_sun_scatter = 0.35
+fog_density = 0.023
+fog_height = 2.0
+fog_height_density = 2.5263
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_t8a43"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f302j"]
-albedo_texture = ExtResource("6_7qvf3")
-roughness_texture = ExtResource("8_ucilp")
-normal_enabled = true
-normal_texture = ExtResource("7_wemh4")
+dof_blur_far_distance = 18.72
+dof_blur_far_transition = 382.31
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gujus"]
 albedo_texture = ExtResource("10_na4pi")
@@ -46,22 +50,9 @@ normal_texture = ExtResource("12_c3k1c")
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Bottle" type="MeshInstance3D" parent="."]
-mesh = SubResource("CylinderMesh_mgdbp")
-skeleton = NodePath("../..")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.31953, 0, 0)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_2wgqx")
-camera_attributes = SubResource("CameraAttributesPractical_t8a43")
-
-[node name="Mentos3D" parent="." instance=ExtResource("2_iybhr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32311, -0.0149088)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.965926, 1.13133e-08, -0.258819, 0.258819, -4.2222e-08, 0.965926, 0, -1, -4.37114e-08, 0, 5.59461, 0)
+[node name="PlayerLogic" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_et4w0")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -78,14 +69,34 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_y1a0o")
+texture = ExtResource("3_slfb0")
 expand_mode = 2
 
-[node name="bouteille3D" parent="." instance=ExtResource("3_1sl8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11182, 0.0295382, 0.324719)
+[node name="Bottle" parent="." instance=ExtResource("3_1sl8j")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -3, 0.245664, 0)
 
-[node name="asteroid01" parent="." instance=ExtResource("4_eykeh")]
-transform = Transform3D(3.6921, -3.28228, 0, 2.75211, 4.30207, -0.218569, 0.422263, 0.660077, 1.42453, -16.3572, 0, 7.27704)
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.31953, 1, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2wgqx")
+camera_attributes = SubResource("CameraAttributesPractical_t8a43")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.965926, 1.13133e-08, -0.258819, 0.258819, -4.2222e-08, 0.965926, 0, -1, -4.37114e-08, 0, 5.59461, 0)
+
+[node name="CloudsHandler" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.92039, 7.41133, -0.2226)
+script = ExtResource("3_h3bav")
+spawn_period = 0.05
+
+[node name="ObstacleHandler" type="Node3D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("4_3abob")]
+script = ExtResource("6_1tu3o")
 
 [node name="FlyingSaucer2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74468, 0, -2.53608)
@@ -96,3 +107,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_f302j")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0032, 10.0556, -10.0968)
 mesh = ExtResource("9_u0xfa")
 surface_material_override/0 = SubResource("StandardMaterial3D_gujus")
+
+[connection signal="ui_refresh" from="PlayerLogic" to="CanvasLayer/UI" method="_on_player_logic_ui_refresh"]

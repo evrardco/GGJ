@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c1lcie1cpkwsd"
+path="res://.godot/imported/Wooden_Box_ST1VH74.obj-4c1774d66a5f85ccb84396b14744b71d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wooden_Box_ST1VH74.obj-4c1774d66a5f85ccb84396b14744b71d.mesh"]
+
+source_file="res://assets/models/Wooden_Box_ST1VH74.obj"
+dest_files=["res://.godot/imported/Wooden_Box_ST1VH74.obj-4c1774d66a5f85ccb84396b14744b71d.mesh", "res://.godot/imported/Wooden_Box_ST1VH74.obj-4c1774d66a5f85ccb84396b14744b71d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
