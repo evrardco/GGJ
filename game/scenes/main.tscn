@@ -1,11 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://baygkdli7usix"]
+[gd_scene load_steps=11 format=3 uid="uid://baygkdli7usix"]
 
 [ext_resource type="PackedScene" uid="uid://dk8l6xvunrvkb" path="res://assets/models/bouteille3D.fbx" id="3_1sl8j"]
 [ext_resource type="Script" path="res://game/scripts/clouds_handler.gd" id="3_h3bav"]
 [ext_resource type="Texture2D" uid="uid://cn102kf17lepq" path="res://Fond du ciel.png" id="3_slfb0"]
 [ext_resource type="PackedScene" uid="uid://c2ymhdxfwy1c5" path="res://game/scenes/ui.tscn" id="4_3abob"]
-
-[ext_resource type="PackedScene" path="res://game/scenes/ui.tscn" id="4_3abob"]
 [ext_resource type="Script" path="res://game/scripts/player_logic.gd" id="5_et4w0"]
 [ext_resource type="Script" path="res://game/scenes/ui.gd" id="6_1tu3o"]
 
@@ -30,45 +28,11 @@ fog_height_density = 2.5263
 dof_blur_far_distance = 18.72
 dof_blur_far_transition = 382.31
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wlm23"]
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-inherit_velocity_ratio = 0.664
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5t17"]
-transparency = 1
-albedo_color = Color(0.994742, 0.563129, 0.390153, 0.101961)
-emission_enabled = true
-emission = Color(0.735431, 0.356537, 0.0544626, 1)
-emission_energy_multiplier = 0.28
-
-[sub_resource type="SphereMesh" id="SphereMesh_hg7nm"]
-material = SubResource("StandardMaterial3D_m5t17")
-height = 1.082
-
 [node name="Node3D" type="Node3D"]
 
 [node name="PlayerLogic" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("5_et4w0")
-
-[node name="Bottle" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.29128)
-mesh = SubResource("CylinderMesh_mgdbp")
-skeleton = NodePath("../..")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.31953, 0, 0)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_2wgqx")
-camera_attributes = SubResource("CameraAttributesPractical_t8a43")
-
-[node name="Mentos3D" parent="." instance=ExtResource("2_iybhr")]
-transform = Transform3D(0.999489, 0, -0.0319515, 0, 1, 0, 0.0319515, 0, 0.999489, 0, 1.32311, 2.2761)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.965926, 1.13133e-08, -0.258819, 0.258819, -4.2222e-08, 0.965926, 0, -1, -4.37114e-08, 0, 5.59461, 0)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -115,13 +79,3 @@ spawn_period = 0.05
 script = ExtResource("6_1tu3o")
 
 [connection signal="ui_refresh" from="PlayerLogic" to="CanvasLayer/UI" method="_on_player_logic_ui_refresh"]
-[node name="FlyingSaucer2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74468, 0, -2.53608)
-mesh = ExtResource("5_e8uau")
-surface_material_override/0 = SubResource("StandardMaterial3D_f302j")
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(0.683269, 0, 0, 0, 0.683269, 0, 0, 0, 0.683269, 151.828, 0, 0)
-amount = 50
-process_material = SubResource("ParticleProcessMaterial_wlm23")
-draw_pass_1 = SubResource("SphereMesh_hg7nm")
