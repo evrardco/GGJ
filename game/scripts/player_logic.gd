@@ -10,7 +10,7 @@ signal ui_refresh
 @export var boost_left : float = boost_duration
 @export var min_vy : float = -50
 @export var max_vy : float = 30
-	
+@export var altitude : float = 100
 var rng = RandomNumberGenerator.new()
 
 @export var player_speed : float = 10
@@ -48,9 +48,7 @@ func consume_boost():
 		n_boosts -= 1
 	ui_refresh.emit()
 	
-func _process(delta: float) -> void:
-	update_vy(delta)
-	
+func handle_kb(delta: float):
 	if Input.is_action_just_pressed("boost"):
 		consume_boost()
 		
@@ -68,5 +66,7 @@ func _process(delta: float) -> void:
 	var rotation_angle = player_LandR_vitesse * 10.0  # Ajustez ce facteur pour une rotation plus prononcée
 	bottle.rotation_degrees.x = lerp(bottle.rotation_degrees.x, rotation_angle, 5.0 * delta)
 	
-	print(rotation_angle)
-	
+func _process(delta: float) -> void:
+	update_vy(delta)
+	handle_kb(delta)
+	self.altitude += delta * player_vy
