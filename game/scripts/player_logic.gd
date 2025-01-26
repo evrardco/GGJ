@@ -2,20 +2,21 @@ extends Node
 class_name PlayerLogic
 signal ui_refresh
 @export var n_boosts : int = 3
-@export var boost_accel_y : float = 15
+@export var boost_accel_y : float = 10  
 @export var accel_y : float = 0
 @export var accel_y_decr : float = 2.0  
 @export var gravity : float = 0.25
-@export var boost_duration : float = 5.0
+@export var boost_duration : float = 2.0
 @export var boost_left : float = boost_duration
-@export var min_vy : float = 10
+@export var min_vy : float = -50
+@export var max_vy : float = 30
 	
 var rng = RandomNumberGenerator.new()
 
 @export var player_speed : float = 10
 var player_LandR_vitesse : float = 0
 @export var player_LandR_posision : float = 0
-var player_vy : float = min_vy
+var player_vy : float = 0
 var player_speed_max : float = 20
 var player_speed_min : float = -10
 var limite_left : float = -1.7
@@ -36,6 +37,8 @@ func update_vy(delta : float):
 	player_vy += delta * (accel_y - gravity)
 	if player_vy < min_vy:
 		player_vy = min_vy
+	if player_vy > max_vy:
+		player_vy = max_vy
 # Appelé à chaque frame. 'delta' est le temps écoulé depuis la frame précédente.
 func consume_boost():
 	if n_boosts == 0:

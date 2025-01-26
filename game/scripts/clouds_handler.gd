@@ -1,7 +1,8 @@
 extends Node3D
 var spawnCloud = load("res://game/scenes/cloud.tscn")
 var time_counter: float = 0
-@export var spawn_period : float = 1
+@export var max_spawn_period : float = 1
+@export var spawn_period : float = max_spawn_period
 
 # Limites de position pour les nuages
 @export var min_x : float = 0
@@ -16,6 +17,7 @@ var time_counter: float = 0
 @export var max_abs_z_offset : float = 20
 
 var rng = RandomNumberGenerator.new()
+@onready var playerLogic : PlayerLogic = %"PlayerLogic"
 # Appelé lorsque le nœud entre dans l'arbre de la scène pour la première fois.
 func _ready() -> void:
 	ggj_spawn_cloud()
@@ -40,5 +42,6 @@ func _process(delta: float) -> void:
 	if time_counter >= spawn_period:
 		ggj_spawn_cloud()
 		time_counter = 0
+	spawn_period = max_spawn_period / playerLogic.player_vy
 	
 	
