@@ -80,7 +80,7 @@ func handle_kb(delta: float):
 	
 	# Rotation de la bouteille en fonction de la vitesse latérale
 	var rotation_angle = player_LandR_vitesse * 10.0  # Ajustez ce facteur pour une rotation plus prononcée
-	bottle.rotation_degrees.x =  PI * 2 + lerp(bottle.rotation_degrees.x, rotation_angle, 5.0 * delta)
+	bottle.rotation_degrees.x =  PI * 4 + lerp(bottle.rotation_degrees.x, rotation_angle, 5.0 * delta)
 
 func check_game_over(delta: float):
 	if player_vy <= min_vy:

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://brp1vkwvoi0xn"]
+[gd_scene load_steps=5 format=3 uid="uid://brp1vkwvoi0xn"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_05vpg"]
 [ext_resource type="Texture2D" uid="uid://cqw54ieqepgoc" path="res://assets/images/Capture d'écran 2025-01-25 192206.png" id="2_udc7w"]
 [ext_resource type="AudioStream" uid="uid://bgjrsf1vsk08l" path="res://assets/Videos and photos/ambiance ville.mp3" id="3_usdu2"]
+[ext_resource type="Texture2D" uid="uid://dwctlimixb8mj" path="res://assets/images/Titre jeu.png" id="4_efqkw"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_05vpg")
@@ -37,6 +38,14 @@ text = "EXIT"
 stream = ExtResource("3_usdu2")
 autoplay = true
 parameters/looping = false
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = -79.0
+offset_top = -84.0
+offset_right = 1841.0
+offset_bottom = 996.0
+scale = Vector2(0.395258, 0.510683)
+texture = ExtResource("4_efqkw")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
