@@ -7,7 +7,7 @@
 height = 0.3
 radius = 0.4
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 
 [node name="Mentos3D" parent="." instance=ExtResource("1_qapq6")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)

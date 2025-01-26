@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch2fjcs0tbqug"]
+
+[ext_resource type="PackedScene" uid="uid://cfkar44rx5d1f" path="res://assets/models/Fusée fbx.fbx" id="1_u71s7"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ctngs"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f1gld"]
+height = 2.38246
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3y0yp"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Fusée fbx" parent="." instance=ExtResource("1_u71s7")]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Fusée fbx"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fusée fbx/RigidBody3D"]
+transform = Transform3D(0.224453, 0, 0, 0, 0.766774, 0, 0, 0, 0.224453, 0, 0.785022, 0)
+shape = SubResource("CylinderShape3D_ctngs")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Fusée fbx/RigidBody3D"]
+transform = Transform3D(0.119151, 0, 0, 0, 0.322231, 0, 0, 0, 0.119151, -0.221259, 0.395619, 0)
+shape = SubResource("CapsuleShape3D_f1gld")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Fusée fbx/RigidBody3D"]
+transform = Transform3D(0.12005, 0, 0, 0, 0.392458, 0, 0, 0, 0.12005, 0.224859, 0.38464, -0.000420116)
+shape = SubResource("CapsuleShape3D_3y0yp")

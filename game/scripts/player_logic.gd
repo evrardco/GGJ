@@ -13,6 +13,7 @@ signal ui_game_over
 @export var max_vy : float = 30
 @export var altitude : float = 100
 @export var bottle_speed : float = 0
+@export var obstacle_penalty : float = 10
 var game_over_timer : float = 0
 @export var game_over_max_time : float = 2.0
 var rng = RandomNumberGenerator.new()
@@ -96,3 +97,12 @@ func _process(delta: float) -> void:
 	self.altitude += delta * player_vy
 	self.bottle.position.y += delta * bottle_speed
 	check_game_over(delta)
+
+func obstacle_collide(area : Area3D):
+	self.player_vy -= obstacle_penalty
+	area.get_parent().get_parent().queue_free()
+	
+
+func _on_bottle_hit_box_area_entered(area: Area3D) -> void:
+	if area.name != "BoostHitBox" :
+		obstacle_collide(area)

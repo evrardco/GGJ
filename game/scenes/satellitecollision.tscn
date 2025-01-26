@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddebcu3m7pbri"]
+
+[ext_resource type="ArrayMesh" uid="uid://70pde2n42vl6" path="res://assets/models/CommunitcationSatellite.obj" id="1_34vr4"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CommunitcationSatellite" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.159601, 0, -0.156215)
+mesh = ExtResource("1_34vr4")
