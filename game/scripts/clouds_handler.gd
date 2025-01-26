@@ -19,7 +19,7 @@ var time_counter: float = 0
 @export var max_abs_z_offset : float = 20
 
 var rng = RandomNumberGenerator.new()
-@onready var playerLogic : PlayerLogic = $"PlayerLogic"
+@onready var playerLogic : PlayerLogic = %"PlayerLogic"
 
 # Appelé lorsque le nœud entre dans l'arbre de la scène pour la première fois.
 func _ready() -> void:
@@ -51,5 +51,5 @@ func _process(delta: float) -> void:
 		ggj_spawn_cloud()
 		ggj_spawn_mentos()
 		time_counter = 0
-	spawn_period = max_spawn_period / playerLogic.player_speed
+	spawn_period = max_spawn_period / playerLogic.player_vy
 	

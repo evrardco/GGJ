@@ -47,7 +47,9 @@ func consume_boost():
 		boost_left += boost_duration
 		n_boosts -= 1
 	ui_refresh.emit()
-	
+func add_boost():
+	n_boosts += 1
+	ui_refresh.emit()
 func _process(delta: float) -> void:
 	update_vy(delta)
 	
