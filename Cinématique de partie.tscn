@@ -1,9 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://elhvj7obrkr2"]
+[gd_scene load_steps=3 format=3 uid="uid://ca2bmtawa1uck"]
 
+[ext_resource type="VideoStream" path="res://assets/Videos and photos/Cinématique-de-partie-2.ogv" id="1_il1wr"]
 [ext_resource type="Script" path="res://Cinématique partie.gd" id="1_p5x6n"]
-
-[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_g6e8g"]
-file = "res://assets/Videos and photos/Cinématique-de-partie-1_1.ogv"
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,7 +9,7 @@ file = "res://assets/Videos and photos/Cinématique-de-partie-1_1.ogv"
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.601623, 0.600689)
-stream = SubResource("VideoStreamTheora_g6e8g")
+stream = ExtResource("1_il1wr")
 autoplay = true
 script = ExtResource("1_p5x6n")
 
